@@ -98,10 +98,10 @@ def mergeDXF(target, source, move = (0.0, 0.0), ignoreLayers = None, renameLayer
         #     poly.closed = e.closed
         elif t[14:20] == 'LWPoly':
             addLayer(e_lay, dxf, src)
-            points = e.get_rstrip_points()
+            points = e.get_points()
             newPoints = []
             for p in points:
-                newPoints.append( (p[0] + move[0], p[1] + move[1]) )
+                newPoints.append( (p[0] + move[0], p[1] + move[1], p[2], p[3], p[4]) )
             poly = target_msp.add_lwpolyline(newPoints, dxfattribs={
                 'layer': e_lay,
                 'flags': e.dxf.flags
@@ -117,6 +117,16 @@ def mergeDXF(target, source, move = (0.0, 0.0), ignoreLayers = None, renameLayer
                 'layer': e_lay,
                 'flags': e.dxf.flags
             })
+
+            points = e.get_control_points()
+            newPoints = []
+            for p in points:
+                newPoints.append( (p[0] + move[0], p[1] + move[1], p[2]) )
+            spline.set_control_points(newPoints)
+
+            spline.set_knot_values(e.get_knot_values())
+            spline.set_weights(e.get_weights())
+
             spline.closed = e.closed
         elif t[14:20] == 'Modern':
             # addLayer(e.dxf.layer, dxf, src)
