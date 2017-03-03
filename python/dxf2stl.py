@@ -30,9 +30,13 @@ class stlUnion(threading.Thread):
         self.result = self.E1.union(self.E2)
 
 def dxf2stl(dxf, extrude):
-    THREADS = 8
+    THREADS = 6
     E = dxfElements(dxf, extrude=extrude)
+    print E.keys()
     stl = E['IZREZ']
+    if 'IZREZ_PLEXI' in E:
+        if E['IZREZ_PLEXI'] != []:
+            stl = stl.difference(E['IZREZ_PLEXI'], engine='blender')
     H = E['HOLES']
     while len(H)>1:
         H1 = H[0::2]
@@ -62,17 +66,24 @@ def dxf2stl(dxf, extrude):
     # stl.show()
     return stl.difference(H[0], engine='blender')
 
+def setColor(stl, color):
+    facets = stl.facets()
+    for facet in facets:
+        stl.visual.face_colors[facet] = color
+
 # stl = dxf2stl('../dxf/blocks/6mm_les_izrez_gor - LM8UU.dxf', 6.0)
 # stl.export('../stl/GOR.stl')
 stl = trimesh.load('../stl/GOR.stl')
 stl.apply_transform(trimesh.transformations.translation_matrix( (.0, .0, 478.0) ))
+# setColor(stl, [34, 59, 205, 255])
 stl.export('../stl/movedGOR.stl')
 
 # stl = dxf2stl('../dxf/blocks/6mm_les_izrez_dol - LM8UU.dxf', 6.0)
 # stl.export('../stl/DOL.stl')
 stl = trimesh.load('../stl/DOL.stl')
 stl.apply_transform(trimesh.transformations.rotation_matrix(math.pi, (.0, 1.0, .0), (.0, .0, .0) ))
-stl.apply_transform(trimesh.transformations.translation_matrix( (.0, .0, 74.0) ))
+stl.apply_transform(trimesh.transformations.translation_matrix( (.0, .0, 80.0) ))
+# setColor(stl, [34, 59, 205, 255])
 stl.export('../stl/movedDOL.stl')
 
 # stl = dxf2stl('../dxf/blocks/6mm_les_izrez_levo - LM8UU.dxf', 6.0)
@@ -81,12 +92,30 @@ stl = trimesh.load('../stl/LEVO.stl')
 stl.apply_transform(trimesh.transformations.rotation_matrix(math.pi/2, (.0, .0, 1.0), (.0, .0, .0) ))
 stl.apply_transform(trimesh.transformations.rotation_matrix(math.pi/2, (.0, 1.0, .0), (.0, .0, .0) ))
 stl.apply_transform(trimesh.transformations.translation_matrix( (-205.0, 211.0, .0) ))
-# stl.apply_transform(trimesh.transformations.translation_matrix( (.0, .0, 478.0) ))
+# setColor(stl, [34, 205, 59, 255])
 stl.export('../stl/movedLEVO.stl')
 
 # stl = dxf2stl('../dxf/blocks/6mm_les_izrez_desno - LM8UU.dxf', 6.0)
 # stl.export('../stl/DESNO.stl')
 stl = trimesh.load('../stl/DESNO.stl')
 stl.apply_transform(trimesh.transformations.rotation_matrix(-math.pi/2, (.0, .0, 1.0), (.0, .0, .0) ))
-# stl.apply_transform(trimesh.transformations.translation_matrix( (.0, .0, 478.0) ))
+stl.apply_transform(trimesh.transformations.rotation_matrix(-math.pi/2, (.0, 1.0, .0), (.0, .0, .0) ))
+stl.apply_transform(trimesh.transformations.translation_matrix( (205.0, 211.0, .0) ))
+# setColor(stl, [34, 205, 59, 255])
 stl.export('../stl/movedDESNO.stl')
+
+# stl = dxf2stl('../dxf/blocks/6mm_les_izrez_spredaj - LM8UU.dxf', 6.0)
+# stl.export('../stl/SPREDAJ.stl')
+stl = trimesh.load('../stl/SPREDAJ.stl')
+stl.apply_transform(trimesh.transformations.rotation_matrix(math.pi/2, (1.0, .0, .0), (.0, .0, .0) ))
+stl.apply_transform(trimesh.transformations.translation_matrix( (209.0, -198.0, .0) ))
+# setColor(stl, [205, 59, 34, 255])
+stl.export('../stl/movedSPREDAJ.stl')
+
+# stl = dxf2stl('../dxf/blocks/6mm_les_izrez_zadaj - LM8UU.dxf', 6.0)
+# stl.export('../stl/ZADAJ.stl')
+stl = trimesh.load('../stl/ZADAJ.stl')
+stl.apply_transform(trimesh.transformations.rotation_matrix(math.pi/2, (1.0, .0, .0), (.0, .0, .0) ))
+stl.apply_transform(trimesh.transformations.translation_matrix( (-209.0, 205.0, .0) ))
+# setColor(stl, [205, 59, 34, 255])
+stl.export('../stl/movedZADAJ.stl')
