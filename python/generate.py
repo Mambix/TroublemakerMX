@@ -164,21 +164,20 @@ def mergeFiles(target, sources):
 
 if __name__ == "__main__":
     mergeFiles('../dxf/6mm_plywood_cut_left_right.dxf', {
-        '../dxf/blocks/6mm_les_izrez_levo - LM8UU.dxf': (0.0, 0.0),
-        '../dxf/blocks/6mm_les_izrez_desno - LM8UU.dxf': (0.0, 0.0)
+        '../dxf/blocks/6mm_les_izrez_levo - LM8UU.dxf': {'move': (0.0, 0.0), 'ignoreLayers': ['HOLES_PLEXI'], 'renameLayers': {'IZREZ_PLEXI': 'IZREZ'}},
+        '../dxf/blocks/6mm_les_izrez_desno - LM8UU.dxf': {'move': (0.0, 0.0), 'ignoreLayers': ['HOLES_PLEXI'], 'renameLayers': {'IZREZ_PLEXI': 'IZREZ'}}
     })
 
     mergeFiles('../dxf/6mm_plywood_cut_front_back.dxf', {
-        '../dxf/blocks/6mm_les_izrez_spredaj - LM8UU.dxf': (0.0, 0.0),
+        '../dxf/blocks/6mm_les_izrez_spredaj - LM8UU.dxf': {'move': (0.0, 0.0), 'ignoreLayers': ['HOLES_PLEXI'], 'renameLayers': {'IZREZ_PLEXI': 'IZREZ'}},
         '../dxf/blocks/6mm_les_izrez_zadaj - LM8UU.dxf': (0.0, 0.0)
     })
 
     mergeFiles('../dxf/6mm_plywood_cut_top_bottom.dxf', {
-        '../dxf/blocks/6mm_les_izrez_gor - LM8UU.dxf': (-206.0, 205.0),
-        '../dxf/blocks/6mm_plexi_izrez_gor - LM8UU.dxf': {'move': (-190.3, 186.0), 'ignoreLayers': ['HOLES'], 'renameLayers': {'HOLES2': 'HOLES'}},
+        '../dxf/blocks/6mm_les_izrez_gor - LM8UU.dxf': {'move': (-206.0, 205.0), 'ignoreLayers': ['HOLES_PLEXI'], 'renameLayers': {'IZREZ_PLEXI': 'IZREZ'}},
         '../dxf/blocks/6mm_les_izrez_dol - LM8UU.dxf': (206.0, 205.0)
     })
 
     mergeFiles('../dxf/6mm_plexi_cut_windows.dxf', {
-        '../dxf/blocks/6mm_plexi_izrez_gor - LM8UU.dxf': {'move': (0.0, 0.0), 'ignoreLayers': ['HOLES2']}
+        '../dxf/blocks/6mm_les_izrez_gor - LM8UU.dxf': {'move': (0.0, 0.0), 'ignoreLayers': ['HOLES', 'IZREZ'], 'renameLayers': {'IZREZ_PLEXI': 'IZREZ', 'HOLES_PLEXI': 'HOLES'}}
     })
