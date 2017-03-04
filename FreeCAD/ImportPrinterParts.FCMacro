@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+
+# Macro Begin: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+import FreeCAD
+import Part
+
+def addCylinder(id, label, radius, height, placement, rotation):
+	App.ActiveDocument.addObject("Part::Cylinder",id)
+	App.ActiveDocument.ActiveObject.Label = label
+	App.ActiveDocument.recompute()
+	FreeCAD.getDocument("Unnamed").getObject(id).Radius = radius
+	FreeCAD.getDocument("Unnamed").getObject(id).Height = height
+	FreeCAD.getDocument("Unnamed").getObject(id).Placement = App.Placement(placement,rotation)
+
+def addSTL(file, label, placement, rotation):
+	Mesh.insert(file,"Unnamed")
+	App.ActiveDocument.ActiveObject.Placement = App.Placement(placement,rotation)
+	App.ActiveDocument.ActiveObject.Label = label
+
+addCylinder("Cylinder1", "X-Right", '4 mm', '409 mm', App.Vector(177,205,427), App.Rotation(App.Vector(1,0,0),90))
+addCylinder("Cylinder2", "X-Left", '4 mm', '409 mm', App.Vector(-176,205,427), App.Rotation(App.Vector(1,0,0),90))
+addCylinder("Cylinder3", "Y-Back", '4 mm', '410 mm', App.Vector(-205,156.5,445), App.Rotation(App.Vector(0,1,0),90))
+addCylinder("Cylinder4", "Y-Front", '4 mm', '410 mm', App.Vector(-205,-182,445), App.Rotation(App.Vector(0,1,0),90))
+addCylinder("Cylinder5", "X-Right", '6 mm', '410 mm', App.Vector(96,178,74), App.Rotation(App.Vector(0,0,1),90))
+addCylinder("Cylinder6", "X-Right", '6 mm', '410 mm', App.Vector(-64,178,74), App.Rotation(App.Vector(0,0,1),90))
+
+addCylinder("Cylinder7", "X-Hot", '3 mm', '309 mm', App.Vector(0,142,441), App.Rotation(App.Vector(1,0,0),90))
+addCylinder("Cylinder8", "Y-Hot", '3 mm', '323 mm', App.Vector(-162,0,431), App.Rotation(App.Vector(0,1,0),90))
+
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","X-Carrige-Back", App.Vector(0,156.5,445), App.Rotation(App.Vector(1,0,0),180))
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2 - 180.stl","X-Carrige-Front", App.Vector(0,-182,445), App.Rotation(App.Vector(1,0,0),180))
+
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","Y-Carrige-Left", App.Vector(-177,0,427), App.Rotation(App.Vector(0,0,1),-90))
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","Y-Carrige-Right", App.Vector(176,0,427), App.Rotation(App.Vector(0,0,1),90))
+
+# Macro End: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++

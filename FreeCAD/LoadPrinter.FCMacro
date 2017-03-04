@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+
+# Macro Begin: C:\Users\Red\AppData\Roaming\FreeCAD\LoadPrinter.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+import FreeCAD
+import Mesh
+
+App.newDocument("Unnamed")
+#App.setActiveDocument("Unnamed")
+#App.ActiveDocument=App.getDocument("Unnamed")
+#Gui.ActiveDocument=Gui.getDocument("Unnamed")
+#Gui.activateWorkbench("PartWorkbench")
+Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedDESNO.stl","Unnamed")
+#Gui.SendMsgToActiveView("ViewFit")
+Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedDOL.stl","Unnamed")
+#Gui.SendMsgToActiveView("ViewFit")
+Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedGOR.stl","Unnamed")
+#Gui.SendMsgToActiveView("ViewFit")
+Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedLEVO.stl","Unnamed")
+#Gui.SendMsgToActiveView("ViewFit")
+Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedSPREDAJ.stl","Unnamed")
+#Gui.SendMsgToActiveView("ViewFit")
+Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedZADAJ.stl","Unnamed")
+#Gui.SendMsgToActiveView("ViewFit")
+FreeCADGui.getDocument("Unnamed").getObject("movedDOL").ShapeColor = (0.00,0.00,1.00)
+FreeCADGui.getDocument("Unnamed").getObject("movedGOR").ShapeColor = (0.00,0.00,1.00)
+FreeCADGui.getDocument("Unnamed").getObject("movedLEVO").ShapeColor = (0.00,0.67,0.00)
+FreeCADGui.getDocument("Unnamed").getObject("movedDESNO").ShapeColor = (0.00,0.67,0.00)
+FreeCADGui.getDocument("Unnamed").getObject("movedSPREDAJ").ShapeColor = (1.00,0.33,0.00)
+FreeCADGui.getDocument("Unnamed").getObject("movedZADAJ").ShapeColor = (1.00,0.33,0.00)
+# Macro End: C:\Users\Red\AppData\Roaming\FreeCAD\LoadPrinter.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
