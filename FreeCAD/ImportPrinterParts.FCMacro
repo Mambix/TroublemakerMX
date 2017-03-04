@@ -33,4 +33,8 @@ addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2 - 180.stl","X-Ca
 addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","Y-Carrige-Left", App.Vector(-177,0,427), App.Rotation(App.Vector(0,0,1),-90))
 addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","Y-Carrige-Right", App.Vector(176,0,427), App.Rotation(App.Vector(0,0,1),90))
 
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Motor_NEMA17.stl","X-Motor", App.Vector(176,262,427), App.Rotation(App.Vector(1,0,0),90))
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Motor_NEMA17.stl","Y-Motor", App.Vector(-262,156.5,445), App.Rotation(App.Vector(0,1,0),90))
+addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Motor_NEMA17.stl","Z-Motor", App.Vector(16,178,57), App.Rotation(App.Vector(0,0,1),0))
+
 # Macro End: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
