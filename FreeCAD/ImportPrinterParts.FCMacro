@@ -3,6 +3,9 @@
 # Macro Begin: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
 import FreeCAD
 import Part
+import Mesh
+
+filePath = u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/"
 
 def addCylinder(id, label, radius, height, placement, rotation):
 	App.ActiveDocument.addObject("Part::Cylinder",id)
@@ -12,29 +15,38 @@ def addCylinder(id, label, radius, height, placement, rotation):
 	FreeCAD.getDocument("Unnamed").getObject(id).Height = height
 	FreeCAD.getDocument("Unnamed").getObject(id).Placement = App.Placement(placement,rotation)
 
-def addSTL(file, label, placement, rotation):
-	Mesh.insert(file,"Unnamed")
+def addSTL(file, label, placement, rotation, color=None):
+	Mesh.insert(u"{}{}.stl".format(filePath,file),"Unnamed")
 	App.ActiveDocument.ActiveObject.Placement = App.Placement(placement,rotation)
 	App.ActiveDocument.ActiveObject.Label = label
+	if color is not None:
+		FreeCADGui.getDocument("Unnamed").getObject(file).ShapeColor = color
 
 addCylinder("Cylinder1", "X-Right", '4 mm', '409 mm', App.Vector(177,205,427), App.Rotation(App.Vector(1,0,0),90))
 addCylinder("Cylinder2", "X-Left", '4 mm', '409 mm', App.Vector(-176,205,427), App.Rotation(App.Vector(1,0,0),90))
 addCylinder("Cylinder3", "Y-Back", '4 mm', '410 mm', App.Vector(-205,156.5,445), App.Rotation(App.Vector(0,1,0),90))
 addCylinder("Cylinder4", "Y-Front", '4 mm', '410 mm', App.Vector(-205,-182,445), App.Rotation(App.Vector(0,1,0),90))
-addCylinder("Cylinder5", "X-Right", '6 mm', '410 mm', App.Vector(96,178,74), App.Rotation(App.Vector(0,0,1),90))
-addCylinder("Cylinder6", "X-Right", '6 mm', '410 mm', App.Vector(-64,178,74), App.Rotation(App.Vector(0,0,1),90))
+addCylinder("Cylinder5", "Z-Right", '6 mm', '410 mm', App.Vector(96,178,74), App.Rotation(App.Vector(0,0,1),90))
+addCylinder("Cylinder6", "Z-Left", '6 mm', '410 mm', App.Vector(-64,178,74), App.Rotation(App.Vector(0,0,1),90))
 
-addCylinder("Cylinder7", "X-Hot", '3 mm', '309 mm', App.Vector(0,142,441), App.Rotation(App.Vector(1,0,0),90))
-addCylinder("Cylinder8", "Y-Hot", '3 mm', '323 mm', App.Vector(-162,0,431), App.Rotation(App.Vector(0,1,0),90))
+addCylinder("Cylinder7", "X-Hot", '3 mm', '309 mm', App.Vector(0,142,443), App.Rotation(App.Vector(1,0,0),90))
+addCylinder("Cylinder8", "Y-Hot", '3 mm', '323 mm', App.Vector(-162,0,429), App.Rotation(App.Vector(0,1,0),90))
 
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","X-Carrige-Back", App.Vector(0,156.5,445), App.Rotation(App.Vector(1,0,0),180))
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2 - 180.stl","X-Carrige-Front", App.Vector(0,-182,445), App.Rotation(App.Vector(1,0,0),180))
+addSTL(u"Carrige #2","X-Carrige-Back", App.Vector(0,156.5,445), App.Rotation(App.Vector(1,0,0),180))
+addSTL(u"Carrige #2 - 180","X-Carrige-Front", App.Vector(0,-182,445), App.Rotation(App.Vector(1,0,0),180))
 
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","Y-Carrige-Left", App.Vector(-177,0,427), App.Rotation(App.Vector(0,0,1),-90))
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Carrige #2.stl","Y-Carrige-Right", App.Vector(176,0,427), App.Rotation(App.Vector(0,0,1),90))
+addSTL(u"Carrige #2","Y-Carrige-Left", App.Vector(-177,0,427), App.Rotation(App.Vector(0,0,1),-90))
+addSTL(u"Carrige #2","Y-Carrige-Right", App.Vector(176,0,427), App.Rotation(App.Vector(0,0,1),90))
 
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Motor_NEMA17.stl","X-Motor", App.Vector(176,262,427), App.Rotation(App.Vector(1,0,0),90))
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Motor_NEMA17.stl","Y-Motor", App.Vector(-262,156.5,445), App.Rotation(App.Vector(0,1,0),90))
-addSTL(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/Motor_NEMA17.stl","Z-Motor", App.Vector(16,178,57), App.Rotation(App.Vector(0,0,1),0))
+addSTL(u"Motor_NEMA17","X-Motor", App.Vector(176,262,427), App.Rotation(App.Vector(1,0,0),90))
+addSTL(u"Motor_NEMA17","Y-Motor", App.Vector(-262,156.5,445), App.Rotation(App.Vector(0,1,0),90))
+addSTL(u"Motor_NEMA17","Z-Motor", App.Vector(16,178,57), App.Rotation(App.Vector(0,0,1),0))
+
+addSTL(u"movedHE_TOP","HE-TOP", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0))
+addSTL(u"movedHE_BOTTOM","HE-BOTTOM", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0))
+addSTL(u"movedHE_FRONT","HE-FRONT", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0), (1.00,0.67,0.00))
+addSTL(u"movedHE_BACK","HE-BACK", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0), (1.00,0.67,0.00))
+addSTL(u"movedHE_LEFT","HE-LEFT", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0), (1.00,0.67,0.00))
+addSTL(u"movedHE_RIGHT","HE-RIGHT", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0), (1.00,0.67,0.00))
 
 # Macro End: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
