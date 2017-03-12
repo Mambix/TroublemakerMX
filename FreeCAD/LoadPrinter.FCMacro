@@ -4,22 +4,24 @@
 import FreeCAD
 import Mesh
 
+filePath = u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/"
+
 App.newDocument("Unnamed")
 #App.setActiveDocument("Unnamed")
 #App.ActiveDocument=App.getDocument("Unnamed")
 #Gui.ActiveDocument=Gui.getDocument("Unnamed")
 #Gui.activateWorkbench("PartWorkbench")
-Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedDESNO.stl","Unnamed")
+Mesh.insert(filePath + u"movedDESNO.stl","Unnamed")
 #Gui.SendMsgToActiveView("ViewFit")
-Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedDOL.stl","Unnamed")
+Mesh.insert(filePath + u"movedDOL.stl","Unnamed")
 #Gui.SendMsgToActiveView("ViewFit")
-Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedGOR.stl","Unnamed")
+Mesh.insert(filePath + u"movedGOR.stl","Unnamed")
 #Gui.SendMsgToActiveView("ViewFit")
-Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedLEVO.stl","Unnamed")
+Mesh.insert(filePath + u"movedLEVO.stl","Unnamed")
 #Gui.SendMsgToActiveView("ViewFit")
-Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedSPREDAJ.stl","Unnamed")
+Mesh.insert(filePath + u"movedSPREDAJ.stl","Unnamed")
 #Gui.SendMsgToActiveView("ViewFit")
-Mesh.insert(u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/movedZADAJ.stl","Unnamed")
+Mesh.insert(filePath + u"movedZADAJ.stl","Unnamed")
 #Gui.SendMsgToActiveView("ViewFit")
 FreeCADGui.getDocument("Unnamed").getObject("movedDOL").ShapeColor = (0.00,0.00,1.00)
 FreeCADGui.getDocument("Unnamed").getObject("movedGOR").ShapeColor = (0.00,0.00,1.00)
