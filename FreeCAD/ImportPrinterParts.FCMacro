@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Macro Begin: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+# Macro Begin: ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
 import FreeCAD
 import Part
 import Mesh
 
-filePath = u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/"
+# filePath = u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/"
+filePath = u"/home/dlednik/GIT/TroublemakerMX/stl/"
 
 def addCylinder(id, label, radius, height, placement, rotation):
 	App.ActiveDocument.addObject("Part::Cylinder",id)
@@ -49,4 +50,5 @@ addSTL(u"movedHE_BACK","HE-BACK", App.Vector(0,0,436), App.Rotation(App.Vector(0
 addSTL(u"movedHE_LEFT","HE-LEFT", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0), (1.00,0.67,0.00))
 addSTL(u"movedHE_RIGHT","HE-RIGHT", App.Vector(0,0,436), App.Rotation(App.Vector(0,0,1),0), (1.00,0.67,0.00))
 
-# Macro End: C:\Users\Red\AppData\Roaming\FreeCAD\ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+addSTL(u"movedTABLE","TABLE", App.Vector(0,0,0), App.Rotation(App.Vector(0,0,1),0))
+# Macro End: ImportPrinterParts.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++

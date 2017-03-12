@@ -1,5 +1,5 @@
 999
-dxfrw 0.5.13
+dxfrw 0.5.10
 0
 SECTION
 2
@@ -67,7 +67,7 @@ STANDARD
 9
 $CLAYER
 8
-0
+IZREZ
 9
 $DIMASZ
 40
@@ -223,9 +223,9 @@ AcDbViewportTableRecord
 21
 1
 12
-122.861586314
+122.964861975
 22
-64.5412130637
+64.6809389581
 13
 0
 23
@@ -253,7 +253,7 @@ AcDbViewportTableRecord
 40
 257.776049767
 41
-1.90497737557
+2.14705882353
 42
 50
 43
@@ -1157,11 +1157,11 @@ AcDbSymbolTableRecord
 100
 AcDbLayerTableRecord
 2
-PRVI_IZREZ
+IZREZ
 70
 0
 62
-6
+7
 6
 CONTINUOUS
 370
@@ -1267,20 +1267,6 @@ ACAD
 70
 0
 0
-APPID
-5
-47
-330
-9
-100
-AcDbSymbolTableRecord
-100
-AcDbRegAppTableRecord
-2
-LibreCad
-70
-0
-0
 ENDTAB
 0
 TABLE
@@ -1301,7 +1287,7 @@ AcDbDimStyleTable
 0
 DIMSTYLE
 105
-48
+47
 330
 A
 100
@@ -1483,7 +1469,7 @@ AcDbBlockTableRecord
 0
 BLOCK_RECORD
 5
-49
+48
 330
 1
 100
@@ -1501,7 +1487,7 @@ AcDbBlockTableRecord
 0
 BLOCK_RECORD
 5
-4C
+4B
 330
 1
 100
@@ -1603,9 +1589,9 @@ AcDbBlockEnd
 0
 BLOCK
 5
-4A
-330
 49
+330
+48
 100
 AcDbEntity
 8
@@ -1627,7 +1613,7 @@ AcDbBlockBegin
 0
 LINE
 5
-4F
+4E
 100
 AcDbEntity
 8
@@ -1651,7 +1637,7 @@ AcDbLine
 0
 LINE
 5
-50
+4F
 100
 AcDbEntity
 8
@@ -1675,7 +1661,7 @@ AcDbLine
 0
 LINE
 5
-51
+50
 100
 AcDbEntity
 8
@@ -1699,7 +1685,7 @@ AcDbLine
 0
 SOLID
 5
-52
+51
 100
 AcDbEntity
 8
@@ -1725,13 +1711,13 @@ AcDbTrace
 31
 0
 12
--29.4161126941
+-29.416112694
 22
 -114.500135424
 32
 0
 13
--29.4161126941
+-29.416112694
 23
 -114.500135424
 33
@@ -1739,7 +1725,7 @@ AcDbTrace
 0
 SOLID
 5
-53
+52
 100
 AcDbEntity
 8
@@ -1759,7 +1745,7 @@ AcDbTrace
 30
 0
 11
--29.4171669679
+-29.4171669678
 21
 114.503651076
 31
@@ -1779,7 +1765,7 @@ AcDbTrace
 0
 MTEXT
 5
-54
+53
 100
 AcDbEntity
 8
@@ -1801,13 +1787,13 @@ AcDbMText
 40
 3.5
 41
-13.6111111111
+7
 71
 5
 72
 1
 1
-236.00
+236
 7
 standard
 210
@@ -1825,9 +1811,9 @@ standard
 0
 ENDBLK
 5
-4B
+4A
 330
-49
+48
 100
 AcDbEntity
 8
@@ -1837,9 +1823,9 @@ AcDbBlockEnd
 0
 BLOCK
 5
-4D
-330
 4C
+330
+4B
 100
 AcDbEntity
 8
@@ -1861,7 +1847,7 @@ GENAXEH
 0
 LINE
 5
-55
+54
 100
 AcDbEntity
 8
@@ -1885,9 +1871,9 @@ AcDbLine
 0
 ENDBLK
 5
-4E
+4D
 330
-4C
+4B
 100
 AcDbEntity
 8
@@ -1903,7 +1889,7 @@ ENTITIES
 0
 CIRCLE
 5
-56
+55
 100
 AcDbEntity
 8
@@ -1925,7 +1911,7 @@ AcDbCircle
 0
 CIRCLE
 5
-57
+56
 100
 AcDbEntity
 8
@@ -1947,7 +1933,7 @@ AcDbCircle
 0
 CIRCLE
 5
-58
+57
 100
 AcDbEntity
 8
@@ -1969,7 +1955,7 @@ AcDbCircle
 0
 CIRCLE
 5
-59
+58
 100
 AcDbEntity
 8
@@ -1991,7 +1977,7 @@ AcDbCircle
 0
 CIRCLE
 5
-5A
+59
 100
 AcDbEntity
 8
@@ -2013,7 +1999,7 @@ AcDbCircle
 0
 CIRCLE
 5
-5B
+5A
 100
 AcDbEntity
 8
@@ -2035,7 +2021,7 @@ AcDbCircle
 0
 CIRCLE
 5
-5C
+5B
 100
 AcDbEntity
 8
@@ -2057,7 +2043,7 @@ AcDbCircle
 0
 CIRCLE
 5
-5D
+5C
 100
 AcDbEntity
 8
@@ -2079,7 +2065,7 @@ AcDbCircle
 0
 CIRCLE
 5
-5E
+5D
 100
 AcDbEntity
 8
@@ -2101,7 +2087,7 @@ AcDbCircle
 0
 CIRCLE
 5
-5F
+5E
 100
 AcDbEntity
 8
@@ -2123,7 +2109,7 @@ AcDbCircle
 0
 CIRCLE
 5
-60
+5F
 100
 AcDbEntity
 8
@@ -2145,7 +2131,7 @@ AcDbCircle
 0
 CIRCLE
 5
-61
+60
 100
 AcDbEntity
 8
@@ -2167,11 +2153,11 @@ AcDbCircle
 0
 LWPOLYLINE
 5
-62
+61
 100
 AcDbEntity
 8
-PRVI_IZREZ
+IZREZ
 6
 ByLayer
 62
@@ -2229,7 +2215,7 @@ AcDbPolyline
 0
 DIMENSION
 5
-63
+62
 100
 AcDbEntity
 8
@@ -2260,6 +2246,8 @@ AcDbDimension
 33
 71
 5
+72
+0
 3
 Standard
 53

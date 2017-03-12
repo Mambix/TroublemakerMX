@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# Macro Begin: C:\Users\Red\AppData\Roaming\FreeCAD\LoadPrinter.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+# Macro Begin: LoadPrinter.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
 import FreeCAD
 import Mesh
 
-filePath = u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/"
+# filePath = u"D:/GIT/gitHub.com/mambix/TroublemakerMX/stl/"
+filePath = u"/home/dlednik/GIT/TroublemakerMX/stl/"
+
 
 App.newDocument("Unnamed")
 #App.setActiveDocument("Unnamed")
@@ -29,4 +31,4 @@ FreeCADGui.getDocument("Unnamed").getObject("movedLEVO").ShapeColor = (0.00,0.67
 FreeCADGui.getDocument("Unnamed").getObject("movedDESNO").ShapeColor = (0.00,0.67,0.00)
 FreeCADGui.getDocument("Unnamed").getObject("movedSPREDAJ").ShapeColor = (1.00,0.33,0.00)
 FreeCADGui.getDocument("Unnamed").getObject("movedZADAJ").ShapeColor = (1.00,0.33,0.00)
-# Macro End: C:\Users\Red\AppData\Roaming\FreeCAD\LoadPrinter.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+# Macro End: LoadPrinter.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
