@@ -1,0 +1,13 @@
+# FreeCAD import script
+settings:
+  subDirectory: stl
+import:
+  TroublemakerMX:
+    printer:
+      files:
+        - movedGOR.stl
+        - movedDOL.stl
+        - movedDESNO.stl
+        - movedLEVO.stl
+        - movedSPREDAJ.stl
+        - movedZADAJ.stl
