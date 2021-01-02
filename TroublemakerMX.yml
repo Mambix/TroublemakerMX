@@ -4,10 +4,145 @@ settings:
 import:
   TroublemakerMX:
     printer:
-      files:
-        - movedGOR.stl
-        - movedDOL.stl
-        - movedDESNO.stl
-        - movedLEVO.stl
-        - movedSPREDAJ.stl
-        - movedZADAJ.stl
+      movedTOP.stl:
+        color: blue
+      movedBOTTOM.stl:
+        color: blue
+      movedRIGHT.stl:
+        color: red
+      movedLEFT.stl:
+        color: red
+      movedFRONT.stl:
+        color: green
+      movedBACK.stl:
+        color: green
+      HotPlate:
+        solid: box
+        length: 235.0
+        width: 235.0
+        height: 3.0
+        placement: [-101.50, -133.0, 390.0]
+    mechanics:
+      Z_AXIS_LEFT:
+        solid: cylinder
+        radius: 6.0
+        height: 410.0
+        placement: [-64.0, 178.0, 74.0]
+      Z_AXIS_RIGHT:
+        solid: cylinder
+        radius: 6.0
+        height: 410.0
+        placement: [96.0, 178.0, 74.0]
+      Z_AXIS_SCREW:
+        solid: cylinder
+        radius: 4.0
+        height: 400.0
+        placement: [16.0, 178.0, 95.0]
+      LMK12LUU.stl:
+        - objectName: Z_AXIS_LEFT_LMK12LUU
+          placement: [-64, 178, 360]
+        - objectName: Z_AXIS_RIGHT_LMK12LUU
+          placement: [96, 178, 360]
+      X_AXIS_BACK:
+        solid: cylinder
+        radius: 4.0
+        height: 413.0
+        placement: [-208.0, 156.5, 445.0]
+        rotationVector: [.0, 1.0, .0]
+        rotationAngle: 90.0
+      X_AXIS_FRONT:
+        solid: cylinder
+        radius: 4.0
+        height: 413.0
+        placement: [-208.0, -182.0, 445.0]
+        rotationVector: [.0, 1.0, .0]
+        rotationAngle: 90.0
+      X_HOTEND:
+        solid: cylinder
+        radius: 3.0
+        height: 323.0
+        placement: [-161.0, 0, 429.0]
+        rotationVector: [.0, 1.0, .0]
+        rotationAngle: 90.0
+      Y_AXIS_LEFT:
+        solid: cylinder
+        radius: 4.0
+        height: 409.0
+        placement: [-176.0, 205.0, 427.0]
+        rotationVector: [1.0, .0, .0]
+        rotationAngle: 90.0
+      Y_AXIS_RIGHT:
+        solid: cylinder
+        radius: 4.0
+        height: 409.0
+        placement: [177.0, 205.0, 427.0]
+        rotationVector: [1.0, .0, .0]
+        rotationAngle: 90.0
+      Y_HOTEND:
+        solid: cylinder
+        radius: 3.0
+        height: 309.0
+        placement: [.0, 142.0, 442.0]
+        rotationVector: [1.0, .0, .0]
+        rotationAngle: 90.0
+      Carriage_180.stl:
+        - objectName: X_CARRIAGE_FRONT
+          placement: [.0, -182.0, 445.0]
+          rotationVector: [1.0, .0, .0]
+          rotationAngle: 180.0
+        - objectName: X_CARRIAGE_BACK
+          placement: [.0, 156.5, 445.0]
+          rotationVector: [.0, 1.0, .0]
+          rotationAngle: 180.0
+      Carriage.stl:
+        - objectName: Y_CARRIAGE_LEFT
+          placement: [-176.0, 0.0, 427.0]
+          rotationVector: [.0, .0, 1.0]
+          rotationAngle: -90.0
+        - objectName: Y_CARRIAGE_RIGHT
+          placement: [177.0, 0.0, 427.0]
+          rotationVector: [.0, .0, 1.0]
+          rotationAngle: 90.0
+    table:
+      movedTABLE_HOLDER.stl:
+        color: cyan
+        placement: [0, 0, 60]
+      movedTABLE_WALL.stl:
+        color: darkGreen
+        placement: [0, 0, 0]
+      movedTABLE_MOUNT.stl:
+        color: yellow
+        placement: [0, 0, 0]
+      movedTABLE_SIDES.stl:
+        - objectName: SIDE_LEFT
+          color: green
+          placement: [-27, 178, 372]
+        - objectName: SIDE_RIGHT
+          color: green
+          placement: [53, 178, 372]
+      movedTABLE_CROSS.stl:
+        - objectName: CROSS_FRONT
+          color: red
+          placement: [16, 56, 372]
+        - objectName: CROSS_BACK
+          color: red
+          placement: [16, -94, 372]
+    hot end:
+      movedHE_SIDE_6.5.stl:
+        - objectName: HE_FRONT
+          placement: [.0, -7.0, 435.5]
+        - objectName: HE_BACK
+          placement: [.0, 13.0, 435.5]
+        - objectName: HE_LEFT
+          placement: [-7.0, .0, 435.5]
+          rotationAngle: 180.0
+          rotationVector: [1.0, 1.0, .0]
+        - objectName: HE_RIGHT
+          placement: [13.0, .0, 435.5]
+          rotationAngle: 180.0
+          rotationVector: [1.0, 1.0, .0]
+      movedHE_TOP.stl:
+        color: red
+        placement: [.0, .0, .5]
+      movedHE_BOTTOM.stl:
+        placement: [.0, .0, .5]
