@@ -19,7 +19,11 @@ merge:
         - HOLES_PLEXI
         renameLayers:
           IZREZ_PLEXI: IZREZ
-      6mm_les_izrez_zadaj - LM8UU.dxf: None
+      6mm_les_izrez_zadaj - LM8UU.dxf:
+        ignoreLayers:
+        - HOLES_PLEXI
+        renameLayers:
+          IZREZ_PLEXI: IZREZ
     6mm_plywood_cut_top_bottom.dxf:
       6mm_les_izrez_gor - LM8UU.dxf:
         move: [-206.0, 205.0]
@@ -42,6 +46,7 @@ solidify:
   sourceDirectory: dxf/blocks
   targetDirectory: stl
   cutLayer: IZREZ
+  holesLayer2: IZREZ_PLEXI
   groups:
     printer:
       6mm_les_izrez_gor - LM8UU.dxf:
@@ -82,45 +87,49 @@ solidify:
           - rotate: [math.pi / 2, [1.0, .0, .0], [.0, .0, .0]]
           - translate: [-209.0, 205.0, .0]
     hotEnd:
-      6mm_les_izrez_hotend_top.dxf:
+      6mm_les_izrez_hotend_top2.dxf:
         save: movedHE_TOP.stl
         modifications:
           - extrude: 6.0
-          - translate: [0.0, 0.0, 16.0]
-      6mm_les_izrez_hotend_bottom.dxf:
+          - translate: [0.0, 0.0, 451.0]
+      6mm_les_izrez_hotend_bottom2.dxf:
         save: movedHE_BOTTOM.stl
         modifications:
           - extrude: 6.0
-          - translate: [0.0, 0.0, -22.0]
-      6mm_les_izrez_hotend_side_7.dxf:
-        save: movedHE_FRONT.stl
+          - translate: [0.0, 0.0, 413.0]
+      6mm_les_izrez_hotend_side_6.5.dxf:
+        save: movedHE_SIDE_6.5.stl
         modifications:
           - extrude: 6.0
           - rotate: [math.pi / 2, [1.0, .0, .0], [.0, .0, .0]]
-          - translate: [0.0, -7.0, 0.0]
-      6mm_les_izrez_hotend_side_7.dxf:
-        save: movedHE_BACK.stl
-        modifications:
-          - extrude: 6.0
-          - rotate: [math.pi / 2, [1.0, .0, .0], [.0, .0, .0]]
-          - translate: [0.0, 13.0, 0.0]
-      6mm_les_izrez_hotend_side_7.dxf:
-        save: movedHE_LEFT.stl
-        modifications:
-          - extrude: 6.0
-          - rotate: [-math.pi / 2, [.0, .0, 1.0], [.0, .0, .0]]
-          - rotate: [math.pi / 2, [.0, 1.0, .0], [.0, .0, .0]]
-          - translate: [-13.0, 0.0, 0.0]
-      6mm_les_izrez_hotend_side_7.dxf:
-        save: movedHE_RIGHT.stl
-        modifications:
-          - extrude: 6.0
-          - rotate: [-math.pi / 2, [.0, .0, 1.0], [.0, .0, .0]]
-          - rotate: [math.pi / 2, [.0, 1.0, .0], [.0, .0, .0]]
-          - translate: [7.0, 0.0, 0.0]
+          - translate: [.0, .0, .0]
     table:
-      6mm_les_izrez_miza.dxf:
-        save: movedTABLE.stl
+      6mm_les_izrez_table_holder_LMK12LUU.dxf:
+        save: movedTABLE_HOLDER.stl
         modifications:
           - extrude: 6.0
-          - translate: [0.0, 0.0, 200.0]
+          - translate: [16.0, 178.0, 306.0]
+      6mm_les_izrez_table_sides_LMK12LUU.dxf:
+        save: movedTABLE_SIDES.stl
+        modifications:
+          - extrude: 6.0
+          - rotate: [math.pi/2, [1.0, .0, .0], [.0, .0, .0]]
+          - rotate: [math.pi/2, [.0, .0, 1.0], [.0, .0, .0]]
+          # - translate: [16.0, 178.0, 306.0]
+      6mm_les_izrez_table_cross_LMK12LUU.dxf:
+        save: movedTABLE_CROSS.stl
+        modifications:
+          - extrude: 6.0
+          - rotate: [math.pi/2, [1.0, 0.0, .0], [.0, .0, .0]]
+          # - translate: [16.0, 178.0, 306.0]
+      6mm_les_izrez_table_wall_LMK12LUU.dxf:
+        save: movedTABLE_WALL.stl
+        modifications:
+          - extrude: 6.0
+          - rotate: [math.pi/2, [1.0, 0.0, .0], [.0, .0, .0]]
+          - translate: [16.0, 165.0, 372.0]
+      6mm_les_izrez_table_mount_LMK12LUU.dxf:
+        save: movedTABLE_MOUNT.stl
+        modifications:
+          - extrude: 6.0
+          - translate: [16.0, 178.0, 409.0]
